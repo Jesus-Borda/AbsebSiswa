@@ -1,3 +1,4 @@
+import 'package:app_escolar/src/page/RegisterPage.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:app_escolar/src/page/loginPage.dart';
@@ -16,6 +17,11 @@ final GoRouter appRouter = GoRouter(
       name: 'login',
       builder: (context, state) => const LoginPage(),
     ),
+    GoRoute(
+      path: '/register',
+      name: 'register',
+      builder: (context, state) => const RegisterPage(),
+    )
   ],
   // (Opcional) Manejo de rutas no encontradas (Página 404)
   errorBuilder: (context, state) => const Scaffold(

@@ -79,7 +79,7 @@ class LandingPage extends StatelessWidget {
                 ),
               ),
               onPressed: () {
-                   context.pushNamed('login'); // Navegar a la página de inicio de sesión usando GoRouter
+                   context.pushNamed('register'); // Navegar a la página de registro usando GoRouter
                 // Acción al presionar el botón
               },
               child: Text(
@@ -89,6 +89,31 @@ class LandingPage extends StatelessWidget {
                   color: Color.fromARGB(255, 240, 242, 245),
                 ),
               ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Already have an account?',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Color.fromARGB(255, 5, 11, 44),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {
+                    context.pushNamed('login'); // Navegar a la página de inicio de sesión usando GoRouter
+                    // Acción al presionar el botón
+                  },
+                  child: Text(
+                    'Login',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Color.fromARGB(255, 15, 89, 205),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),

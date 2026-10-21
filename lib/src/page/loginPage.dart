@@ -90,8 +90,10 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     obscureText: _obscureText,
                   ),
+                  SizedBox(height: 40),
                   ElevatedButton(
                     style: ButtonStyle(
+                      
                       backgroundColor: MaterialStateProperty.all<Color>(
                         Color.fromARGB(255, 15, 89, 205),
                       ),
@@ -99,11 +101,16 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: () {
                       // Acción al presionar el botón
                     },
-                    child: Text(
-                      'Get Started',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Color.fromARGB(255, 240, 242, 245),
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: Center(
+                        child: Text(
+                          'Login',
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Color.fromARGB(255, 240, 242, 245),
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -119,6 +126,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                   ),
+                  SizedBox(height: 20),
                   Row(
                     children: [
                       Expanded(
@@ -145,6 +153,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ],
                   ),
+                  SizedBox(height: 40),
                   ElevatedButton(
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
@@ -155,14 +164,19 @@ class _LoginPageState extends State<LoginPage> {
                       // Acción al presionar el botón
                     },
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset(
-                          '/google.png',
-                          width: 24,
-                          height: 24,
+                        SizedBox(
+                          width: 60,
+                            height: 60,
+                          child: Image.asset(
+                            'assets/images/google.png',
+                                              fit: BoxFit.cover, //[cite: 1]
+
+                          ),
                         ),
                         Text(
-                          'Get Started',
+                          'Continue with Google',
                           style: TextStyle(
                             fontSize: 16,
                             color: Color.fromARGB(255, 0, 0, 0),
@@ -171,7 +185,29 @@ class _LoginPageState extends State<LoginPage> {
                       ],
                     ),
                   ),
-                  
+                  SizedBox(height: 50),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("Dont have an account?",style: TextStyle(
+                        fontSize: 16,
+                        color: Color.fromARGB(255, 5, 11, 44),
+                      ),),
+                      TextButton(
+                        
+                        onPressed: () {
+                          // Acción al presionar el botón
+                        },
+                        child: Text(
+                          'Register',
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Color.fromARGB(255, 15, 89, 205),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
