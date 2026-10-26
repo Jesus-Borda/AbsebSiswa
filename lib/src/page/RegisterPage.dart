@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class RegisterPage extends StatefulWidget {
-  const RegisterPage({ Key? key }) : super(key: key);
+  const RegisterPage({Key? key}) : super(key: key);
 
   @override
   _RegisterPageState createState() => _RegisterPageState();
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-    bool _obscureText = true;
+  bool _obscureText = true;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     color: Color.fromARGB(255, 15, 89, 205),
                   ),
                 ),
-                            SizedBox(width: 10),
+                SizedBox(width: 10),
 
                 Container(
                   decoration: BoxDecoration(
@@ -67,7 +67,7 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
             ),
             SizedBox(height: 20),
-            
+
             Text(
               'Register to your account',
               style: TextStyle(
@@ -85,7 +85,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       labelText: 'Username',
                       prefixIcon: Icon(Icons.person),
                       border: OutlineInputBorder(),
-                    ), 
+                    ),
                   ),
                   SizedBox(height: 20),
                   TextFormField(
@@ -94,6 +94,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       prefixIcon: Icon(Icons.person),
                       border: OutlineInputBorder(),
                     ),
+                    keyboardType: TextInputType.number,
                   ),
                   SizedBox(height: 20),
                   TextFormField(
@@ -118,20 +119,19 @@ class _RegisterPageState extends State<RegisterPage> {
                       labelText: 'Confirm Password',
                       prefixIcon: Icon(Icons.lock),
                       border: OutlineInputBorder(),
-                      
                     ),
                     obscureText: true,
                   ),
                   SizedBox(height: 40),
                   ElevatedButton(
                     style: ButtonStyle(
-                      
                       backgroundColor: MaterialStateProperty.all<Color>(
                         Color.fromARGB(255, 15, 89, 205),
                       ),
                     ),
                     onPressed: () {
                       // Acción al presionar el botón
+                      context.pushNamed('login'); // Navegar a la página de inicio de sesión usando GoRouter
                     },
                     child: SizedBox(
                       width: double.infinity,
@@ -146,7 +146,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                     ),
                   ),
-                  
+
                   SizedBox(height: 20),
                   Row(
                     children: [
@@ -189,11 +189,10 @@ class _RegisterPageState extends State<RegisterPage> {
                       children: [
                         SizedBox(
                           width: 60,
-                            height: 60,
+                          height: 60,
                           child: Image.asset(
                             'assets/images/google.png',
-                                              fit: BoxFit.cover, //[cite: 1]
-
+                            fit: BoxFit.cover, //[cite: 1]
                           ),
                         ),
                         Text(
@@ -208,30 +207,30 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                   SizedBox(height: 50),
                   Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Already have an account?',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Color.fromARGB(255, 5, 11, 44),
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Already have an account?',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Color.fromARGB(255, 5, 11, 44),
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          context.pushNamed('login'); // Navegar a la página de inicio de sesión usando GoRouter
+                          // Acción al presionar el botón
+                        },
+                        child: Text(
+                          'Login',
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Color.fromARGB(255, 15, 89, 205),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-                TextButton(
-                  onPressed: () {
-                    context.pushNamed('login'); // Navegar a la página de inicio de sesión usando GoRouter
-                    // Acción al presionar el botón
-                  },
-                  child: Text(
-                    'Login',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Color.fromARGB(255, 15, 89, 205),
-                    ),
-                  ),
-                ),
-              ],
-            ),
                 ],
               ),
             ),

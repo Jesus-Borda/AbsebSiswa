@@ -1,7 +1,7 @@
 
 
 import 'package:app_escolar/config/router/app_router.dart';
-import 'package:app_escolar/src/page/landingPage.dart';
+import 'package:app_escolar/src/page/StartPage.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {

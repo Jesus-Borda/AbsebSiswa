@@ -1,15 +1,27 @@
+import 'package:app_escolar/src/widget/UserHeader.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
-class LandingPage extends StatelessWidget {
+class LandingPage extends StatefulWidget {
+  const LandingPage({ Key? key }) : super(key: key);
+
+  @override
+  _LandingPageState createState() => _LandingPageState();
+}
+
+class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 100),
+            UserHeader(),
+            SizedBox(height: 20),
             Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(20),
+              margin: EdgeInsets.symmetric(horizontal: 20),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 color: Color.fromARGB(255, 15, 89, 205),
@@ -18,102 +30,57 @@ class LandingPage extends StatelessWidget {
                   width: 2,
                 ),
               ),
-              child: Icon(
-                Icons.school,
-                size: 100,
-                color: Color.fromARGB(255, 240, 242, 245),
-              ),
-            ),
-            SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Absen',
-                  style: TextStyle(
-                    fontSize: 38,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 5, 11, 44),
-                  ),
-                ),
-                Text(
-                  'Siswa',
-                  style: TextStyle(
-                    fontSize: 38,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 15, 89, 205),
-                  ),
-                ),
-              ],
-            ),
-            Text(
-              'Mudah, Cepat, Akurat',
-              style: TextStyle(
-                fontSize: 16,
-                color: Color.fromARGB(255, 5, 11, 44),
-              ),
-            ),
-            Text(
-              'Untuk Kehadiran Siswa',
-              style: TextStyle(
-                fontSize: 16,
-                color: Color.fromARGB(255, 5, 11, 44),
-              ),
-            ),
-
-            SizedBox(
-              width: double.infinity, // Ocupa todo el ancho posible
-              child: AspectRatio(
-                aspectRatio: 16 / 16, // Proporción de aspecto deseada
-                child: Image.asset(
-                  'assets/images/landing.png',
-                  fit: BoxFit.cover, //[cite: 1]
-                ),
-              ),
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(
-                  Color.fromARGB(255, 15, 89, 205),
-                ),
-              ),
-              onPressed: () {
-                   context.pushNamed('register'); // Navegar a la página de registro usando GoRouter
-                // Acción al presionar el botón
-              },
-              child: Text(
-                'Get Started',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Color.fromARGB(255, 240, 242, 245),
-                ),
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Already have an account?',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Color.fromARGB(255, 5, 11, 44),
-                  ),
-                ),
-                TextButton(
-                  onPressed: () {
-                    context.pushNamed('login'); // Navegar a la página de inicio de sesión usando GoRouter
-                    // Acción al presionar el botón
-                  },
-                  child: Text(
-                    'Login',
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    'Today´s Attendance',
                     style: TextStyle(
-                      fontSize: 16,
-                      color: Color.fromARGB(255, 15, 89, 205),
+                      fontSize: 24,
+                      fontWeight: FontWeight.w600,
+                      color: Color.fromARGB(255, 240, 242, 245),
                     ),
                   ),
-                ),
-              ],
+                  SizedBox(height: 6),
+                  Text(
+                    'Monday, 21 April 2025',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Color.fromARGB(255, 240, 242, 245),
+                    ),
+                  ),
+                  SizedBox(height: 16),
+                  Material(
+                    color: const Color.fromARGB(255, 218, 255, 240), // Fondo blanco grisáceo suave
+                    borderRadius: BorderRadius.circular(30), // Forma de cápsula (pill)
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(30), // Forma de cápsula (pill)
+                      onTap: () {
+                        // Acción al presionar el botón
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 14.0, horizontal: 8.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(Icons.check_circle_outline, color: Color.fromARGB(255, 33, 184, 130)),
+                            SizedBox(width: 8),
+                            Text(
+                              'Present',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                                color: Color.fromARGB(255, 33, 184, 130),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
+                ]
+              )
             ),
           ],
         ),

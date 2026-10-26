@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -99,6 +100,8 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     onPressed: () {
+                                            context.pushNamed('landing'); // Navegar a la página de inicio de sesión usando GoRouter
+
                       // Acción al presionar el botón
                     },
                     child: SizedBox(
