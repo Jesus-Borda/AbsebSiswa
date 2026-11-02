@@ -1,9 +1,9 @@
-import 'package:app_escolar/src/page/RegisterPage.dart';
+import 'package:app_escolar/src/page/register_page.dart';
 import 'package:app_escolar/src/page/landingPage.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:app_escolar/src/page/loginPage.dart';
-import 'package:app_escolar/src/page/StartPage.dart';
+import 'package:app_escolar/src/page/login_page.dart';
+import 'package:app_escolar/src/page/start_page.dart';
 
 final GoRouter appRouter = GoRouter(
   initialLocation: '/',
